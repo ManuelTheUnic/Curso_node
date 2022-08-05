@@ -7,8 +7,11 @@ const puerto = 8080
 //servidor estatico (midleware)
 app.use(express.static('public'));
 
-app.get('/menu', function (req, res) {
-    res.send('Menu content')
+app.get('/generic', function (req, res) {
+    res.sendFile(__dirname + '/public/generic.html')
+})
+app.get('/elements', function (req, res) {
+    res.sendFile(__dirname + '/public/elements.html')
 })
 
 app.get('*', function (req, res) {
